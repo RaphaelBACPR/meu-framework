@@ -1,0 +1,23 @@
+{
+    "name": "raphael/base",
+    "description": "Base para outros projetos",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "RaphaelBACPR",
+            "email": "raphaelsfreitaswd@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "symfony/var-dumper": "^6.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\" : "app/"
+        },
+        "files": [
+
+        ]
+    }
+}
