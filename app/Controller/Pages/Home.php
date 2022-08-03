@@ -7,6 +7,10 @@ use App\Utils\View;
 
 class Home extends Page
 {
+
+    /**
+     * Renderiza a pagina Home do Site
+     */
     public static function getHome(): String
     {
         $obOrganization = new Organization;

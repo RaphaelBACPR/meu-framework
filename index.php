@@ -1,7 +1,14 @@
 <?php
 
-use App\Controller\Pages\Home;
+require __DIR__."/config/config.php";
 
-require __DIR__."/vendor/autoload.php";
+use App\Http\Router;
 
-echo Home::getHome();
+//INSTANCIA DO ROTEADOR
+$obRouter = new Router(URL);
+
+//PAGINA DE ROTAS
+include __DIR__ . "/routes/pages.php";
+
+//EXECUÇÃO DAS ROTAS
+$obRouter->run()->sendResponse();
