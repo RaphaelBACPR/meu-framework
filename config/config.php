@@ -2,6 +2,7 @@
 
 require __DIR__ . "/../vendor/autoload.php";
 
+use App\Http\Middleware\Queue;
 use App\Utils\View;
 use App\Utils\Database;
 use App\Utils\Environment;
@@ -25,3 +26,13 @@ Database::config(
     getenv('DB_PASS'),
     getenv('DB_PORT'),
 );
+
+//MIDDLEWARES
+Queue::setMap([
+    'maintenence' => App\Http\Middleware\Maintenence::class
+]);
+
+//MIDDLEWARES PADROES
+Queue::setDefault([
+    'maintenence'
+]);
