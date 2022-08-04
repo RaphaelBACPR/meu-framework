@@ -163,4 +163,14 @@ class Router
     {
         return $this->url . $this->getUri();
     }
+
+    public function redirect($route){
+        //URL
+        $url = $this->url.$route;
+
+        //REDIRECIONA PARA URL
+        header('Location: '.$url);
+        exit;
+
+    }
 }

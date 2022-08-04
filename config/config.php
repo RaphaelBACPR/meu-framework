@@ -29,7 +29,9 @@ Database::config(
 
 //MIDDLEWARES
 Queue::setMap([
-    'maintenence' => App\Http\Middleware\Maintenence::class
+    'maintenence' => App\Http\Middleware\Maintenence::class,
+    'required-admin-logout' => App\Http\Middleware\RequireAdminLogout::class,
+    'required-admin-login' => App\Http\Middleware\RequireAdminLogin::class
 ]);
 
 //MIDDLEWARES PADROES
