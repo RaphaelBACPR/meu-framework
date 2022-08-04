@@ -5,7 +5,7 @@ use App\Http\Response;
 
 //ROTA ADMIN
 $obRouter->get('/admin', [
-    'middlewares'=> [
+    'middlewares' => [
         'required-admin-login'
     ],
     function () {
@@ -15,27 +15,27 @@ $obRouter->get('/admin', [
 
 //ROTA ADMIN LOGIN
 $obRouter->get('/admin/login', [
-    'middlewares'=> [
+    'middlewares' => [
         'required-admin-logout'
     ],
-    function ($request){
+    function ($request) {
         return new Response(200, Admin\Login::getLogin($request));
     }
 ]);
 
 //LOGOUT
 $obRouter->get('/admin/logout', [
-    'middlewares'=> [
+    'middlewares' => [
         'required-admin-login'
     ],
-    function ($request){
+    function ($request) {
         return new Response(200, Admin\Login::setLogout($request));
     }
 ]);
 
 //POST LOGIN
 $obRouter->post('/admin/login', [
-    'middlewares'=> [
+    'middlewares' => [
         'required-admin-logout'
     ],
     function ($request) {

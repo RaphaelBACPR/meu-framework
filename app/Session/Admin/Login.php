@@ -4,14 +4,16 @@ namespace App\Session\Admin;
 
 class Login
 {
-    private static function init(){
+    private static function init()
+    {
         //VERIFICA SE SESSAO NAO ESTA ATIVA
-        if(session_status() != PHP_SESSION_ACTIVE){
+        if (session_status() != PHP_SESSION_ACTIVE) {
             session_start();
         }
     }
 
-    public static function login($obUser){
+    public static function login($obUser)
+    {
         self::init();
         $_SESSION['admin']['usuario'] = [
             'id' => $obUser->id,
@@ -22,15 +24,17 @@ class Login
         return true;
     }
 
-    public static function isLogged(){
+    public static function isLogged()
+    {
         self::init();
         return isset($_SESSION['admin']['usuario']['id']);
     }
 
-    public static function logout(){
+    public static function logout()
+    {
         self::init();
 
-        unset ($_SESSION['admin']['usuario']);
+        unset($_SESSION['admin']['usuario']);
 
         return true;
     }
